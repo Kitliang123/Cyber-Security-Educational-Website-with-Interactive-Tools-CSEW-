@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+
+{% block tittle %}
+CSEW - Login Page
+{% endblock %}
+
+<br></br>
+
+{% block content %}
+<form actoin="" method=POST>
+    {% csrf_token %}
+
+    <input type="submit"
+    value="Submit" class="
+    btn btn-secondary">
+</form>
+{% endblock %}
