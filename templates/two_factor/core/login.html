@@ -1,0 +1,191 @@
+{% extends "two_factor/_base_focus.html" %}
+{% load i18n %}
+{% load two_factor_tags %}
+
+
+{% block extra_media %}
+  {{ form.media }}
+{% endblock %}
+
+{% block content %}
+
+<style>
+	body {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+			background: #696969 !important;
+		}
+		
+	.container{
+		width: 100vw;
+		height: 100vh;
+		display: flex;
+		align-items: center;
+		justify-items: center;
+	}
+
+	.loginform{
+		width: 400px;
+		background-color: #A9A9A9;
+		margin-left: auto;
+		margin-right: auto;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		color:white;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		-webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		-moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		border-radius: 5px;
+	}
+
+	.loginform h1{
+		margin-top: 5%;
+	}
+
+	form{
+		align-items: center;
+		justify-items: center;
+		width: 75%;
+	}
+
+	form label{
+    	display: flex;
+		font-size: large;
+		margin-left: 1em;
+		margin-top: 5px;
+  	}
+
+  	.btncontainer{
+		display: flex;
+		justify-content: center;
+  	}
+
+	.btncontainer1{
+		display: flex;
+		justify-content: center;
+  	}
+
+	.btncontainer1 button{
+		width: 25% !important;
+		margin-top: 1.5em !important;
+		margin-bottom: 1.5em !important;
+		margin-right: 1em;
+		background: #808080 !important;
+		color: white !important
+  	}
+
+	form button {
+		width: 75%;
+		margin-top: 2em;
+		margin-bottom: 2em;
+		background: #808080 !important;
+		color: white !important;
+	}
+
+  	form button:focus {
+		box-shadow: none !important;
+		outline: 0px !important;
+	}
+
+	form input{
+		width: 90%;
+		padding: 0.4em;
+		border-radius: 0.25rem;
+		margin-left: 1em;
+		margin-right: auto;
+	}
+	
+	.loginlinks{
+		margin: 1em;
+		display: flex;
+		justify-content: center;
+		color: black;
+	}
+
+	.csewintro {
+		width: 450px;
+		margin-left: auto;
+		margin-right: auto;
+		color:black;
+		text-align: left;
+	}
+
+	.csewintro h1{
+		margin-top: 10px;
+		font-size: 40px;
+		color: white;
+	}
+
+	.csewintro h4{
+		margin-top: 10px;
+		font-size: 20px;
+		color: #D3D3D3;
+	}       
+</style>
+
+<div class="container">
+	<div class="csewintro">
+		<h1>
+			<strong>Cyber Security Educational Website (CSEW)</strong>
+		</h1>
+		<h4>
+			A Cyber Security Knowledge Sharing Website.
+		</h4>
+	</div>
+	<div class="loginform">
+		<h1>{% block title %}{% trans "LOGIN" %}{% endblock %}</h1>
+
+		{% if wizard.steps.current == 'auth' %}
+			<p>{% blocktrans %}Enter your credentials.{% endblocktrans %}</p>
+		{% elif wizard.steps.current == 'token' %}
+			<p>{{ device }}</p>
+		{% elif wizard.steps.current == 'backup' %}
+			<p>{% blocktrans trimmed %}Use this form for entering backup tokens for logging in.
+			These tokens have been generated for you to print and keep safe. Please
+			enter one of these backup tokens to login to your account.{% endblocktrans %}</p>
+		{% endif %}
+
+
+			<form action="" method="post">{% csrf_token %}
+				{% include "two_factor/_wizard_forms.html" %}
+
+			
+			{% if other_devices %}
+			<p>{% trans "Or, alternatively, use one of your other authentication methods:" %}</p>
+			<p>
+				{% for other in other_devices %}
+				<button name="challenge_device" value="{{ other.persistent_id }}"
+						class="btn btn-secondary btn-block" type="submit">
+				{{ other|as_action }}
+				</button>
+			{% endfor %}</p>
+			{% endif %}
+			<div class="btncontainer1" >
+				{% include "two_factor/_wizard_actions.html" %}
+			</div>
+			<div class="loginlinks">
+				Don't have an account? <a href="{% url 'register' %}" class="ml-2">Sign Up</a>
+			</div>
+		</form>
+	</div>
+</div>
+
+  {% block 'backup_tokens' %}
+    {% if backup_tokens %}
+       <hr>
+       <div class="backup_tokens_form">
+       <form action="" method="post">
+           {% csrf_token %}
+            <p>{% trans "As a last resort, you can use a backup token:" %}</p>
+            <p>
+                <button name="wizard_goto_step" type="submit" value="backup"
+                    class="btn btn-sm btn-secondary btn-block">{% trans "Use Backup Token" %}</button>
+            </p>
+       </form>
+       </div>
+    {% endif %}
+  {% endblock %}
+{% endblock %}
