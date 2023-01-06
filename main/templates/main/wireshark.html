@@ -1,0 +1,91 @@
+{% extends 'main/base.html' %}
+
+{% block tittle %}
+CSEW - Wireshark 
+{% endblock %}
+
+{% block content %}
+<h1>
+    <u>Wireshark</u>
+</h1>
+<div class="defaultpic">
+    <img src="../../../static/media/img/wireshark.png">
+</div>
+<p>
+    Wireshark is an open-source packet analyzer, which is used for education, analysis, software development, communication protocol development, and network troubleshooting. It is used to track the packets so that each one is filtered to meet our specific needs. It is commonly called as a sniffer, network protocol analyzer, and network analyzer. It is also used by network security engineers to examine security problems. Wireshark is a free to use application which is used to apprehend the data back and forth. It is often called as a free packet sniffer computer application. It puts the network card into an unselective mode, i.e., to accept all the packets which it receives.
+</p>
+<h2>
+    Features of Wireshark:
+</h2>
+<ul>
+    <li>
+        Wireshark is an open source tool.
+    </li>
+    <li>
+        Wireshark tool is a very simple and easy tool.
+    </li>
+    <li>
+        Wireshark tool is used by network security engineers to examine security problems.
+    </li>
+    <li>
+        Wireshark tool allows the users to watch all the traffic being passed over the network.
+    </li>
+    <li>
+        Wireshark tool is used by network engineers to troubleshoot network issues.
+    </li>
+    <li>
+        Wireshark tool helps to troubleshoot latency issues and malicious activities on your network.
+    </li>
+    <li>
+        Wireshark tool can also analyze dropped packets.
+    </li>
+</ul>
+<h2>
+    Step-by-step Demonstration of Wireshark:
+</h2>
+<ul>
+    <h5>
+    <u>Step 1</u>: Install Wireshark at the website below, and Open Wireshark.
+    </h5>
+    <ul>
+        <li>
+            http://www.wireshark.org/download.html
+        </li>
+    </ul>
+    <div class="defaultpic">
+        <img src="../../../static/media/img/w1.jpg">
+    </div>
+</ul>
+<ul>
+    <h5>
+    <u>Step 2</u>: The first thing you need to do is look at the available interfaces to capture. To do this, select Capture > Options. The “Capture Interfaces” dialog box will then open as shown below:
+    </h5>
+    <div class="defaultpic">
+        <img src="../../../static/media/img/w2.jpg">
+    </div>
+</ul>
+<ul>
+    <h5>
+    <u>Step 3</u>: Check the box of the interface you want to capture and press the Start button to start.
+    </h5>
+    <div class="defaultpic">
+        <img src="../../../static/media/img/w3.jpg">
+    </div>
+</ul>
+<ul>
+    <h5>
+    <u>Step 4</u>: Once you’ve captured your network data, you’ll want to look at your captured packets. In the screenshot below you’ll see three panes, the packet list pane, the packet bytes pane, and the packet details pane.
+    </h5>
+    <div class="defaultpic">
+        <img src="../../../static/media/img/w4.jpg">
+    </div>
+</ul>
+<ul>
+    <h5>
+    <u>Step 5</u>: If you want to create a visual representation of your data packets, then you need to open IO graphs. Simply click on the statistics menu and select IO graphs. You’ll then be met by a graph window:
+    </h5>
+    <div class="defaultpic">
+        <img src="../../../static/media/img/w5.jpg">
+    </div>
+</ul>
+{% endblock %}

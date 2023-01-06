@@ -1,0 +1,163 @@
+{% extends 'main/base.html' %}
+
+{% block tittle %}
+CSEW - Home Page
+{% endblock %}
+
+{% block content %}
+<style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        width: 100%;
+        height: 100vh;
+        background-position: center;
+        background-size: cover;
+        background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url("../../../static/media/img/cybersecurity.jpg");
+        border-radius: 10px;
+    }
+
+    .row {
+        display: flex;
+        height: 88%;
+        align-items: center;
+    }
+
+    .col {
+        flex-basis: 50%;
+    }
+
+    .col h1{
+        color:#fff;
+        font-size: 62px;
+    }
+
+    .col p{
+        color: #fff;
+        font-size: 17px;
+        line-height: 22px;
+    }
+
+    .col button{
+        width: 180px;
+        color: #000;
+        font-size: 15px;
+        padding: 12px 0;
+        background: #fff;
+        border: 0;
+        border-radius: 20px;
+        outline: none;
+        margin-top: 30px;
+    }
+
+    .col button:hover {
+        background-color: #23A3C7;
+    }
+
+    .col button:active {
+        background-color: #23A3C7;
+        box-shadow: 0 2px #666;
+        transform: translateY(1px);
+    }
+
+    .col a{
+        color: #000;
+    }
+
+    .attacks {
+        width: 200px;
+        height: 230px;
+        display: inline-block;
+        border-radius: 10px;
+        padding: 15px 25px;
+        box-sizing: border-box;
+        cursor: pointer;
+        margin: 10px 15px;
+        background-image: url("../../../static/media/img/securityicon.jpg");
+        background-position: center;
+        background-size: cover;
+        transition: transform 0.5s;
+    }
+
+    .attacks h5{
+        text-shadow: 0 0 15px #1c829f;
+    }
+
+    .attacks:hover {
+        transform: translateY(-10px);
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1>
+                    <u>Home Page</u>
+                </h1>
+                <p>
+                    The Cyber Security Educational Website with Interactive Tools (CSEW) aims to deliver a user-friendly yet fun experience to the one who wants to learn knowledge or information related to the Cyber Security Field. This is to make sure that the users will not feel bored quickly when conducting research or learning about information related to Cyber Security. With that being said, the CSEW will include interactive tools such as step-by-step pictures or quizzes for the users. Some attacks methods that are often used by cybercriminals are being listed on the right side. Feel free to explore more.
+                </p>
+                <a href="/about">
+                    <button type="button">
+                        More About CSEW
+                    </button
+                ></a>
+            </div>
+            <div class="col">
+                
+                <a href="/phishing">
+                <div class="attacks">
+                    <h5>
+                        <i><u><strong>Phishing</strong></u></i>
+                    </h5>
+                </div>
+                </a>
+
+                <a href="/ddos">
+                <div class="attacks">
+                    <h5>
+                        <i><u><strong>DDoS</strong></u></i>
+                    </h5>
+                </div>
+                </a>
+
+                <a href="/mitm">
+                <div class="attacks">
+                    <h5>
+                        <i><u><strong>MITM</strong></u></i>
+                    </h5>
+                </div>
+                </a>
+
+                <a href="/bruteforce">
+                <div class="attacks">
+                    <h5>
+                        <i><u><strong>Brute-force</strong></u></i>
+                    </h5>
+                </div>
+                </a>
+
+                <a href="/packetsniffing">
+                <div class="attacks">
+                    <h5>
+                        <i><u><strong>Packet Sniffing</strong></u></i>
+                    </h5>
+                </div>
+                </a>
+
+                <div class="attacks">
+                    <h5>
+                        <i><u><strong>Coming Soon...</strong></u></i>
+                    </h5>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+{% endblock %}

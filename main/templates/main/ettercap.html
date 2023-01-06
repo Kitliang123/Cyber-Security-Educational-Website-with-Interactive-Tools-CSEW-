@@ -1,0 +1,96 @@
+{% extends 'main/base.html' %}
+
+{% block tittle %}
+CSEW - Ettercap
+{% endblock %}
+
+{% block content %}
+<h1>
+    <u>Ettercap</u>
+</h1>
+<div class="defaultpic">
+    <img src="../../../static/media/img/ettercap.jpg">
+</div>
+<p>
+    Ettercap is a packet capture tool that can write packets back onto the network. Thus, data streams can be diverted and altered on the fly. The system can also be used for protocol analysis to analyze network traffic and work out which applications generate the most traffic. There is a GUI interface for Ettercap, and it is also possible to use Ettercap at the command line. However, the interface is not so hot. Moreover, given the high standard of network monitoring tools that network administrators are used to nowadays, it is unlikely that you would get Ettercap to perform network traffic analysis. The most common uses for Ettercap are man-in-the-middle attacks through ARP poisoning. Additionally, hackers use this tool, and you can use it for penetration testing.
+</p>
+<h2>
+    Features of Ettercap:
+</h2>
+<ul>
+    <li>
+        Ettercap is an open source tool.
+    </li>
+    <li>
+        Ettercap tool is a very simple and easy tool.
+    </li>
+    <li>
+        Ettercap tool is a lightweight tool and does not take extra space.
+    </li>
+    <li>
+        Ettercap tool is a comprehensive suite for man in the middle attacks.
+    </li>
+    <li>
+        Ettercap features sniffing of live connections, content filtering on the fly and many other interesting tricks.
+    </li>
+    <li>
+        Ettercap supports active and passive dissection of many protocols and includes many features for network and host analysis.
+    </li>
+</ul>
+<h2>
+    Step-by-step Demonstration of Ettercap:
+</h2>
+<ul>
+    <h5>
+    <u>Step 1</u>: Launch Ettercap using the following command.
+    </h5>
+    <ul>
+        <li>
+            ettercap -G
+        </li>
+    </ul>
+    <div class="defaultpic">
+        <img src="../../../static/media/img/e1.png">
+    </div>
+</ul>
+<ul>
+    <h5>
+    <u>Step 2</u>: Click “Hosts->Scan for Host”. It will start to scan the hosts present in the network. Once it is completed, click “Hosts->Host List”. It will list the available hosts in the LAN as follows:
+    </h5>
+    <div class="defaultpic">
+        <img src="../../../static/media/img/e2.png">
+    </div>
+</ul>
+<ul>
+    <h5>
+    <u>Step 3</u>: Now among the list, select “192.168.1.51” and click “Add to Target 1” and select “192.168.1.10” and click “Add to Target 2”. Now select “Mitm->Arp Poisoning” as follows:
+    </h5>
+    <div class="defaultpic">
+        <img src="../../../static/media/img/e3.png">
+    </div>
+</ul>
+<ul>
+    <h5>
+    <u>Step 4</u>: The following dialog box will open. Select “Sniff Remote Connection” and click “ok”:
+    </h5>
+    <div class="defaultpic">
+        <img src="../../../static/media/img/e4.png">
+    </div>
+</ul>
+<ul>
+    <h5>
+    <u>Step 5</u>: Then click “Start->Start Sniffing as follows:
+    </h5>
+    <div class="defaultpic">
+        <img src="../../../static/media/img/e5.png">
+    </div>
+</ul>
+<ul>
+    <h5>
+    <u>Step 6</u>: Now ARP is poisoned, you will able to get the ICMP packets send to the victim's machine by using "Wireshark" application as follows:
+    </h5>
+    <div class="defaultpic">
+        <img src="../../../static/media/img/e6.png">
+    </div>
+</ul>
+{% endblock %}

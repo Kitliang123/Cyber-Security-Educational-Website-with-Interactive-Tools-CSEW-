@@ -1,0 +1,121 @@
+{% extends 'main/base.html' %}
+
+{% block tittle %}
+CSEW - John The Ripper
+{% endblock %}
+
+{% block content %}
+<h1>
+    <u>John The Ripper</u>
+</h1>
+<div class="defaultpic">
+    <img src="../../../static/media/img/john.jpg">
+</div>
+<p>
+    John The Ripper tool is actually a password cracking tool that was released to help IT professionals and common users. The software finds the passwords stored in the local system and also recovers lost passwords. John uses several techniques to crack a password. The use of this tool is complicated for normal users as the tool requires you to have sufficient knowledge of the command line. If you are a skilled IT professional with a strong grip on the command line, John the Ripper is an excellent choice for you. The lack of GUI is the main factor why many users don’t opt for this tool when it comes to cracking Windows passwords.
+</p>
+<h2>
+    Features of John The Ripper:
+</h2>
+<ul>
+    <li>
+        John The Ripper is an open source tool.
+    </li>
+    <li>
+        John The Ripper tool is a very simple and easy tool.
+    </li>
+    <li>
+        John The Ripper is a fast password cracker tool.
+    </li>
+    <li>
+        John The Ripper tool can be used on multiple operating systems such as Unix, macOS, Windows, DOS, BeOS, and OpenVMS.
+    </li>
+    <li>
+        John The Ripper tool combines several cracking modes in one program and is fully configurable for your particular needs.
+    </li>
+</ul>
+<h2>
+    Step-by-step Demonstration of John The Ripper:
+</h2>
+<ul>
+    <h5>
+    <u>Step 1</u>: Download John The Ripper tool by visiting the website below:
+    </h5>
+    <ul>
+        <li>
+            https://www.openwall.com/john/
+        </li>
+    </ul>
+    <div class="defaultpic">
+        <img src="../../../static/media/img/j1.png">
+    </div>
+</ul>
+<ul>
+    <h5>
+    <u>Step 2</u>: The easiest and usually fastest method is to start John the Ripper and let it automatically step through its most efficient modes. This is usually fastest unless you know the passwords in question will not be on a wordlist.
+    </h5>
+    <ul>
+        <li>
+            john passwordfile
+        </li>
+    </ul>
+    <div class="defaultpic">
+        <img src="../../../static/media/img/j2.png">
+    </div>
+</ul>
+<ul>
+    <h5>
+    <u>Step 3</u>: You can also use a specific wordlist such as one downloaded from the Internet:
+    </h5>
+    <ul>
+        <li>
+            john passfile –-wordlist=”bestwordlist.txt”
+        </li>
+    </ul>
+    <div class="defaultpic">
+        <img src="../../../static/media/img/j3.png">
+    </div>
+</ul>
+<ul>
+    <h5>
+    <u>Step 4</u>: Hopefully at this point you’ve cracked some passwords. You can view any cracked passwords with:
+    </h5>
+    <ul>
+        <li>
+            john --show passfile
+        </li>
+    </ul>
+    <div class="defaultpic">
+        <img src="../../../static/media/img/j4.png">
+    </div>
+</ul>
+<ul>
+    <h5>
+    <u>Step 5</u>: This will show any cracked passwords for that password file. You can also filter the list to show users with a particular id or that are in a particular group:
+    </h5>
+    <ul>
+        <li>
+            john --show --users=0 passfile
+        </li>
+        <li>
+            john --show --groups=0,1 passfile
+        </li>
+    </ul>
+    <div class="defaultpic">
+        <img src="../../../static/media/img/j5.png">
+    </div>
+</ul>
+<ul>
+    <h5>
+    <u>Step 6</u>: Of course you can also pipe the output to another tool such as grep for further filtering:
+    </h5>
+    <ul>
+        <li>
+            john --show | grep "some user"
+        </li>
+    </ul>
+    <div class="defaultpic">
+        <img src="../../../static/media/img/j6.png">
+    </div>
+</ul>
+{% endblock %}

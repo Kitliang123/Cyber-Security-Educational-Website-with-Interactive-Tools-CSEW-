@@ -1,0 +1,101 @@
+{% extends 'main/base.html' %}
+
+{% block tittle %}
+Category - MITM
+{% endblock %}
+
+{% block content %}
+<h1>
+    <u>Man-in-the-middle <small>(MITM)</small> Attack</u>
+</h1>
+<div class="defaultpic">
+    <img src="../../../static/media/img/mitm.jpg">
+</div>
+<p>
+    A man-in-the-middle attack is a type of eavesdropping attack, where attackers interrupt an existing conversation or data transfer. 
+    After inserting themselves in the "middle" of the transfer, the attackers pretend to be both legitimate participants. This enables 
+    an attacker to intercept information and data from either party while also sending malicious links or other information to both 
+    legitimate participants in a way that might not be detected until it is too late.
+</p>
+<p>
+    You can think of this type of attack as similar to the game of telephone where one person's words are carried along from participant 
+    to participant until it has changed by the time it reaches the final person. In a man-in-the-middle attack, the middle participant 
+    manipulates the conversation unknown to either of the two legitimate participants, acting to retrieve confidential information and 
+    otherwise cause damage.
+</p>
+<h2>
+    How Does A MITM Attack Work?
+</h2>
+<p>
+    MITM attack generally consists of two phases: interception and decryption.
+</p>
+<h5>
+    Phase 1: Interception
+</h5>
+<p>
+    In the interception phase, cybercriminals gain access to a network through an open or poorly secured Wi-Fi router and/or by 
+    manipulating domain name system (DNS) servers. Attackers then scan the router looking for vulnerabilities and possible points 
+    of entry. Most often this is done through a weak password, though cybercriminals may also use more advanced methods such as IP 
+    spoofing or cache poisoning.
+</p>
+<p>
+    Once a target is identified, the attacker typically deploys data capture tools to access and collect the victim’s transmitted 
+    data, strategically redirect traffic or otherwise manipulate the user’s web experience.
+</p>
+<h5>
+    Phase 2: Decryption
+</h5>
+<p>
+    The second phase of an MITM attack is decryption. This is when stolen data is decoded and made intelligible to the cybercriminals. 
+    Decrypted data can be leveraged for any number of nefarious purposes, including identity theft, unauthorized purchases or fraudulent 
+    bank activity. In some cases, man-in-the-middle attacks are conducted for no obvious purpose other than to disrupt business 
+    operations and create chaos for victims.
+</p>
+<h2>
+    MITM Attack Examples
+</h2>
+<ul>
+    <li>
+        <strong>DigiNotar MITM Attacks:</strong>
+    </li>
+    <p>
+        In 2011, Dutch registrar site DigiNotar was breached, which enabled a threat actor to gain access to 500 certificates for 
+        websites like Google, Skype, and others. Access to these certificates allowed the attacker to pose as legitimate websites in 
+        a MITM attack, stealing users' data after tricking them into entering passwords on malicious mirror sites. DigiNotar ultimately 
+        filed for bankruptcy as a result of the breach.
+    </p>
+    <li>
+        <strong>Equifax MITM Attacks:</strong>
+    </li>
+    <p>
+        In 2017, credit score company Equifax removed its apps from Google and Apple after a breach resulted in the leak of personal 
+        data. A researcher found that the app did not consistently use HTTPS, allowing attackers to intercept data as users accessed 
+        their accounts.
+    </p>    
+</ul>
+    <h2>
+        Example of MITM Tools:
+    </h2>
+    <ol>
+        <strong>1. <a href="/ettercap">Ettercap</a></strong>
+        <div class="defaultpic">
+            <img src="../../../static/media/img/ettercap.jpg">
+        </div>
+        <p>
+            Ettercap is a free and open source network security tool for man-in-the-middle attacks on a LAN. It can be used for 
+            computer network protocol analysis and security auditing. It runs on various Unix-like operating systems including Linux, 
+            Mac OS X, BSD and Solaris, and on Microsoft Windows.
+        </p>
+    </ol>
+    <ol>
+        <strong>2. <a href="/xerosploit">Xerosploit</a></strong>
+        <div class="defaultpic">
+            <img src="../../../static/media/img/xerosploit.jpg">
+        </div>
+        <p>
+            Xerosploit is a penetration testing toolkit whose goal is to perform man-in-the-middle attacks for penetration testing 
+            purposes. It brings various modules together that will help you perform very efficient attacks. You can also use it to 
+            perform denial of service attacks and port scanning. 
+        </p>
+    </ol>
+{% endblock %}

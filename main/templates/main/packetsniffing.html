@@ -1,0 +1,98 @@
+{% extends 'main/base.html' %}
+
+{% block tittle %}
+Category - Packet Sniffing
+{% endblock %}
+
+{% block content %}
+<h1>
+    <u>Packet Sniffing</u>
+</h1>
+<div class="defaultpic">
+    <img src="../../../static/media/img/Packetsniffing.png">
+</div>
+
+<p>
+    A packet sniffer is a piece of hardware or software used to observe network traffic. It is also known as a packet analyzer, protocol analyzer, or network analyzer. Sniffers analyse data packet streams that go between connected computers as well as between connected computers and the greater Internet. These packets are addressed to and meant for certain computers, but by utilising a packet sniffer in "promiscuous mode," IT specialists, ordinary users, or malevolent intruders can inspect any packet, regardless of its intended destination. Sniffers can be set up in two different ways. The first is "unfiltered," which means it will record every packet it can and save it on a local hard disc for subsequent analysis. The next option is "filtered," where analyzers would only record packets that contain particular data components.
+</p>
+<p>
+    Both wired and wireless networks can utilise packet sniffers, but the effectiveness of their usage relies on how much of the network they are able to "see" as a result of network security procedures. Sniffers may have access to all packets on a wired network or may be constrained by the location of network switches. Most sniffers can only scan one channel at a time on a wireless network, however using several wireless interfaces can increase this capabilities.
+</p>
+<h2>
+    How Does Packet Sniffing Work?
+</h2>
+<p>
+    Every computer network has a network interface card (NIC), a piece of hardware that houses a circuit board. Non-addressed traffic is ignored by NICs by default. The NICs must be configured in promiscuous mode, which permits them to receive all network traffic, in order to perform sniffing attacks. By decoding the encoded information in the data packets, sniffers may listen in on all traffic moving through the NICs. Weakly encrypted data packets increase the accessibility of sniffing attacks.
+</p>
+<p>
+    The act of sniffing can be classified into two types: active and passive.
+</p>
+<h5>
+    Active Sniffing:
+</h5>
+<p>
+    It is the technique of inserting address resolution protocols (ARPs) into a network to overload the switch content address memory (CAM) table. As a result, legitimate traffic is redirected to other ports, allowing the attacker to sniff traffic from the switch. Active sniffing methodologies are used for spoofing attacks, dynamic host configuration protocol (DHCP) attacks, and domain name system (DNS) poisonings.
+</p>
+<h5>
+    Passive Sniffing:
+</h5>
+<p>
+    It consists solely of listening and is typically used in networks connected by hubs. The traffic is visible to all hosts in this form of network. To discreetly monitor a company’s network, hackers will often employ one of two approaches to passive sniffing. 
+</p>
+<ul>
+    <li>
+        In the case of organisations that use hubs to connect several devices on a single network, hackers can use a sniffer to passively “spy” on all the traffic flowing through the system. This sort of passive sniffing is incredibly difficult to detect. 
+    </li>
+    <li>
+        Passive monitoring, however, does not provide access to all network traffic when a more extensive network is involved, leveraging several connected computers and network switches to direct traffic exclusively to specified devices. Whether for lawful or illegitimate objectives, sniffing would be useless in this instance – thus, compelling hackers to work around the limits imposed by network switches, which necessitates active sniffing. 
+    </li>
+</ul>
+<h2>
+    Packet Sniffing Examples
+</h2>
+<ul>
+    <li>
+        <strong>BIOPASS RAT and Cobalt Strike:</strong>
+    </li>
+    <p>
+        In 2021, cybersecurity researchers detected a destructive operation that targeted online gambling organizations in China using a watering hole attack. It could deploy either Cobalt Strike beacons or a Python-based backdoor known as BIOPASS RAT, which had previously gone undetected. This made use of the live-streaming feature provided by Open Broadcaster Software (OBS) Studio to grab its victims’ display feeds.
+    </p>
+    <p>
+        The BIOPASS and Cobalt Strike attack began with a social engineering technique aimed to deceive website users into installing a loader for obsolete software. While the installer downloads the actual application, it also creates scheduled tasks in order to infect the machine with BIOPASS RAT malware.
+    </p>
+    <li>
+        <strong>Heartland Payment Systems security breach:</strong>
+    </li>
+    <p>
+        Another notable sniffing attack occurred in 2009, when Heartland Payment Systems experienced a security breach, allowing sniffers access to credit cardholder data. The online payment processing corporation was fined $12.6 million for failing to protect customers from the sniffing attack adequately. 
+    </p>  
+    <li>
+        <strong>Europe and the Middle East password sniffing cyberattack:</strong>
+    </li>
+    <p>
+        In 2017, FireEye, a security consulting firm, discovered a phishing-based cyber campaign by Russian-based APT28 hackers targeting hotel guests in Europe and the Middle East. The attack involves using an infected document, Wi-Fi sniffing, and the EternalBlue exploit – a computer vulnerability developed by the United States National Security Agency that refers to a variety of Microsoft Software vulnerabilities. 
+    </p> 
+    </li>  
+</ul>
+    <h2>
+        Example of Packet Sniffing Tools:
+    </h2>
+    <ol>
+        <strong>1. <a href="/wireshark">Wireshark</a></strong>
+        <div class="defaultpic">
+            <img src="../../../static/media/img/wireshark.png">
+        </div>
+        <p>
+            Wireshark is a network protocol analyzer, or an application that captures packets from a network connection, such as from your computer to your home office or the internet. Packet is the name given to a discrete unit of data in a typical Ethernet network. Wireshark is the most often-used packet sniffer in the world.
+        </p>
+    </ol>
+    <ol>
+        <strong>2. <a href="/tcpdump">Tcpdump</a></strong>
+        <div class="defaultpic">
+            <img src="../../../static/media/img/tcpdump.jpg">
+        </div>
+        <p>
+            Tcpdump is a packet analyzer that is launched from the command line. It can be used to analyze network traffic by intercepting and displaying packets that are being created or received by the computer it's running on. It runs on Linux and most UNIX-type operating systems. Distributed under the BSD license, tcpdump is free software. 
+        </p>
+    </ol>
+{% endblock %}

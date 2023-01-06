@@ -1,0 +1,134 @@
+{% extends 'main/base.html' %}
+
+{% block tittle %}
+CSEW - Tcpdump
+{% endblock %}
+
+{% block content %}
+<h1>
+    <u>Tcpdump</u>
+</h1>
+<div class="defaultpic">
+    <img src="../../../static/media/img/tcpdump.jpg">
+</div>
+<p>
+    Tcpdump is a command line utility that allows you to capture and analyze network traffic going through your system. It is often used to help troubleshoot network issues, as well as a security tool. A powerful and versatile tool that includes many options and filters, tcpdump can be used in a variety of cases. Since it's a command line tool, it is ideal to run in remote servers or devices for which a GUI is not available, to collect data that can be analyzed later. It can also be launched in the background or as a scheduled job using tools like cron. Tcpdump is native to Linux and does not run on Windows systems. Tcpdump is installed by default on a large number of Linux/UNIX systems. Because tcpdump is so widely used, there is a wealth of support information and articles on the Internet on how to use tcpdump. The syntax and usage is nearly identical to that of WinDump, which we have already discussed, so what I will do here is demonstrate how to install tcpdump on a Linux system if you find it isn’t already installed.
+</p>
+<h2>
+    Features of Tcpdump:
+</h2>
+<ul>
+    <li>
+        Tcpdump is an open source tool.
+    </li>
+    <li>
+        Tcpdump tool is an command-line-based tool.
+    </li>
+    <li>
+        Tcpdump tool is a packet sniffing and packet analyzing tool for a System Administrator.
+    </li>
+    <li>
+        Tcpdump tool allows System Administrator to troubleshoot connectivity issues in Linux.
+    </li>
+    <li>
+        Tcpdump tool is used to capture, filter, and analyze network traffic such as TCP/IP packets going through your system.
+    </li>
+    <li>
+        Tcpdump tool saves the captured information in a pcap file, these pcap files can then be opened through Wireshark or through the command tool itself.
+    </li>
+</ul>
+<h2>
+    Step-by-step Demonstration of Tcpdump:
+</h2>
+<ul>
+    <h5>
+    <u>Step 1</u>: To capture the packets of current network interface, use the command below:
+    </h5>
+    <ul>
+        <li>
+            sudo tcpdump
+        </li>
+    </ul>
+    <div class="defaultpic">
+        <img src="../../../static/media/img/t1.png">
+    </div>
+</ul>
+<ul>
+    <h5>
+    <u>Step 2</u>: To capture packets from a specific network interface:
+    </h5>
+    <ul>
+        <li>
+            sudo tcpdump -i wlo1
+        </li>
+    </ul>
+    <div class="defaultpic">
+        <img src="../../../static/media/img/t2.png">
+    </div>
+</ul>
+<ul>
+    <h5>
+    <u>Step 3</u>: To capture specific number of packets, use the following command. This command will capture only 4 packets from the wlo1 interface.
+    </h5>
+    <ul>
+        <li>
+            sudo tcpdump -c 4 -i wlo1
+        </li>
+    </ul>
+    <div class="defaultpic">
+        <img src="../../../static/media/img/t3.png">
+    </div>
+</ul>
+<ul>
+    <h5>
+    <u>Step 4</u>: To print captured packets in ASCII format, use the following command. This command will now print the captured packets from wlo1 to ASCII value.
+    </h5>
+    <ul>
+        <li>
+            sudo tcpdump -A -i wlo1
+        </li>
+    </ul>
+    <div class="defaultpic">
+        <img src="../../../static/media/img/t4.png">
+    </div>
+</ul>
+<ul>
+    <h5>
+    <u>Step 5</u>: To display all available interfaces, use the following command.
+    </h5>
+    <ul>
+        <li>
+            sudo tcpdump -D
+        </li>
+    </ul>
+    <div class="defaultpic">
+        <img src="../../../static/media/img/t5.png">
+    </div>
+</ul>
+<ul>
+    <h5>
+    <u>Step 5</u>: To save captured packets into a file, use the following command.
+    </h5>
+    <ul>
+        <li>
+            sudo tcpdump -w captured_packets.pcap -i wlo1
+        </li>
+    </ul>
+    <div class="defaultpic">
+        <img src="../../../static/media/img/t5.png">
+    </div>
+</ul>
+<ul>
+    <h5>
+    <u>Step 5</u>: To read captured packets from a file, use the following command. This command will now read the captured packets from the captured_packets.pcap file.
+    </h5>
+    <ul>
+        <li>
+            sudo tcpdump -r captured_packets.pcap
+        </li>
+    </ul>
+    <div class="defaultpic">
+        <img src="../../../static/media/img/t5.png">
+    </div>
+</ul>
+{% endblock %}

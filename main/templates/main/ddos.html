@@ -1,0 +1,126 @@
+{% extends 'main/base.html' %}
+
+{% block tittle %}
+Category - DDoS
+{% endblock %}  
+
+{% block content %}
+<h1>
+    <u>Distributed Denial-of-Service <small>(DDoS)</small> Attack</u>
+</h1>
+<div class="defaultpic">
+    <img src="../../../static/media/img/ddos.png">
+</div>
+<p>
+    <p>
+        Denial-of-service (DoS) and distributed denial-of-service (DDoS) 
+        attacks are malicious attempts to disrupt the normal operations of a targeted server, service, 
+        or network by overwhelming it with a flood of Internet traffic.
+    </p>
+    <p>
+        DoS attacks accomplish this disruption by sending malicious traffic from a single machine — typically a computer. 
+        They can be very simple; a basic ping flood attack can be accomplished by sending more ICMP 
+        (ping) requests to a targeted server than it is able to process and respond to efficiently.
+    </p>
+    <p>
+        DDoS attacks, meanwhile, use more than one machine to send malicious traffic to their target. Often, these machines 
+        are part of a botnet — a collection of computers or other devices that have been infected with malware and can thus be 
+        controlled remotely by an individual attacker. In other circumstances, multiple individual attackers launch DDoS attacks 
+        by working together to send traffic from their individual computers.
+    </p>
+    <p>
+        DDoS attacks are more prevalent and damaging in the modern Internet for two reasons. First, modern security tools have 
+        evolved to stop some ordinary DoS attacks. Second, DDoS attack tools have become relatively cheap and easy to operate.
+    </p>
+</p>
+<h2>
+    How does a DDoS attack work?
+</h2>
+<p>
+    DDoS attacks are carried out with networks of Internet-connected machines. These networks consist of computers and other devices 
+    (such as IoT devices)which have been infected with malware, allowing them to be controlled remotely by an attacker. These 
+    individual devices are referred to as bots (or zombies), and a group of bots is called a botnet.
+</p>
+<p>
+    Once a botnet has been established, the attacker is able to direct an attack by sending remote instructions to each bot. 
+    When a victim’s server or network is targeted by the botnet, each bot sends requests to the target’s IP address, potentially 
+    causing the server or network to become overwhelmed, resulting in a denial-of-service to normal traffic.
+</p>
+<p>
+    Because each bot is a legitimate Internet device, separating the attack traffic from normal traffic can be difficult.
+</p>
+<h2>
+    DDoS Attack Examples
+</h2>
+<ul>
+    <li>
+        <strong>The February 2020 attack reported by AWS</strong>
+    </li>
+    <p>
+        AWS reported mitigating a massive DDoS attack in February of 2020. At its peak, this attack saw incoming traffic at a rate of 
+        2.3 terabits per second (Tbps). AWS did not disclose which customer was targeted by the attack.
+    </p>
+    <p>
+        The attackers responsible used hijacked Connection-less Lightweight Directory Access Protocol (CLDAP) web servers. CLDAP is a 
+        protocol for user directories. It is an alternative to LDAP, an older version of the protocol. CLDAP has been used in multiple 
+        DDoS attacks in recent years.
+    </p>
+    <li>
+        <strong>The February 2018 GitHub DDoS attack</strong>
+    </li>
+    <p>
+        One of the largest verifiable DDoS attacks on record targeted GitHub, a popular online code management service used by millions 
+        of developers. This attack reached 1.3 Tbps, sending packets at a rate of 126.9 million per second.
+    </p>
+    <p>
+        The GitHub attack was a memcached DDoS attack, so there were no botnets involved. Instead the attackers leveraged the 
+        amplification effect of a popular database caching system known as memcached. By flooding memcached servers with spoofed 
+        requests, the attackers were able to amplify their attack by a magnitude of about 50,000x.
+    </p>
+    <p>
+        Luckily, GitHub was using a DDoS protection service, which was automatically alerted within 10 minutes of the start of the attack. 
+        This alert triggered the process of mitigation and GitHub was able to stop the attack quickly. The massive DDoS attack only ended
+         up lasting about 20 minutes.
+    </p>
+    <li>
+        <strong>The 2016 Dyn attack</strong>
+    </li>
+    <p>
+        Another massive DDoS attack was directed at Dyn, a major DNS provider, in October of 2016. This attack was devastating and created 
+        disruption for many major sites, including Airbnb, Netflix, PayPal, Visa, Amazon, The New York Times, Reddit, and GitHub. This was 
+        done using malware called Mirai. Mirai creates a botnet out of compromised Internet of Things (IoT) devices such as cameras, smart 
+        TVs, radios, printers, and even baby monitors. To create the attack traffic, these compromised devices are all programmed to send 
+        requests to a single victim.
+    </p>
+    <p>
+        Fortunately Dyn was able to resolve the attack within one day, but the motive for the attack was never discovered. Hacktivist groups 
+        claimed responsibility for the attack as a response to WikiLeaks founder Julian Assange being denied Internet access in Ecuador, 
+        but there was no proof to back up this claim. There are also suspicions that the attack was carried out by a disgruntled gamer.
+    </p>
+</ul>
+<h2>
+    Example of DDoS Tools:
+</h2>
+<ol>
+    <strong>1. <a href="/LOIC">Low Orbit Ion Cannon (LOIC)</a></strong>
+    <div class="defaultpic">
+        <img src="../../../static/media/img/loic.jpg">
+    </div>
+    <p>
+        Low Orbit Ion Cannon is an open-source network stress testing and denial-of-service attack application written in C#. LOIC was 
+        initially developed by Praetox Technologies, however it was later released into the public domain and is currently available on 
+        several open-source platforms.
+    </p>
+</ol>
+<ol>
+    <strong>2. <a href="/slowloris">Slowloris</a></strong>
+    <div class="defaultpic">
+        <img src="../../../static/media/img/slowloris.png">
+    </div>
+    <p>
+        Slowloris is a type of denial of service attack tool which allows a single machine to take down another machine's web server 
+        with minimal bandwidth and side effects on unrelated services and ports. Slowloris tries to keep many connections to the target 
+        web server open and hold them open as long as possible.
+    </p>
+</ol>
+{% endblock %}

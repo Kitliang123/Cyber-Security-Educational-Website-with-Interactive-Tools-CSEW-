@@ -1,0 +1,153 @@
+{% extends 'main/base.html' %}
+
+{% block tittle %}
+CSEW - Slowloris
+{% endblock %}
+
+{% block content %}
+<h1>
+    <u>Slowloris</u>
+</h1>
+<div class="defaultpic">
+    <img src="../../../static/media/img/slowloris.png">
+</div>
+<p>
+    Developed by Robert “RSnake” Hansen, Slowloris is DDoS attack software that enables a single computer to take down a web server. Due the simple yet elegant nature of this attack, it requires minimal bandwidth to implement and affects the target server’s web server only, with almost no side effects on other services and ports. Slowloris has proven highly-effective against many popular types of web server software, including Apache 1.x and 2.x. Over the years, Slowloris has been credited with a number of high-profile server takedowns. Notably, it was used extensively by Iranian ‘hackivists’ following the 2009 Iranian presidential election to attack Iranian government web sites.
+</p>
+<h2>
+    Features of Slowloris:
+</h2>
+<ul>
+    <li>
+        Slowloris sends multiple requests to the target as a result generates heavy traffic botnets.
+    </li>
+    <li>
+        Slowloris can be used to perform DDoS attacks on any webserver.
+    </li>
+    <li>
+        Slowloris is a very simple and easy tool.
+    </li>
+    <li>
+        Slowloris is an open-source tool, so you can download it from GitHub free of cost.
+    </li>
+    <li>
+        Slowloris uses perfectly legitimate HTTP traffic.
+    </li>
+    <li>
+        A denial of service attack can be executed with the help of Slowloris by generating heavy traffic of botnets.
+    </li>
+</ul>
+<h2>
+    Step-by-step Demonstration of Slowloris:
+</h2>
+<ul>
+    <h5>
+    <u>Step 1</u>: Create a new Directory on Desktop named Slowloris using the following command and move to the directory that you have to create (Slowloris).
+    </h5>
+    <ul>
+        <li>
+            mkdir Slowloris
+        </li>
+        <li>
+            cd Slowloris
+        </li>
+    </ul>
+    <div class="defaultpic">
+        <img src="../../../static/media/img/sl1.png">
+    </div>
+</ul>
+<ul>
+    <h5>
+    <u>Step 2</u>: Now you have to clone the Slowloris tool from Github so that you can install it on your Kali Linux machine. For that, you only have to type the following URL in your terminal within the Slowloris directory that you have created.
+    </h5>
+    <ul>
+        <li>
+            git clone https://github.com/gkbrk/slowloris.git
+        </li>
+    </ul>
+    <div class="defaultpic">
+        <img src="../../../static/media/img/sl2.png">
+    </div>
+</ul>
+<ul>
+    <h5>
+    <u>Step 3</u>: Now go to the Action bar and click on split terminal vertically then you will see that the two-terminal screen has been open now.
+    </h5>
+    <div class="defaultpic">
+        <img src="../../../static/media/img/sl3.png">
+    </div>
+</ul>
+<ul>
+    <h5>
+    <u>Step 4</u>: Now you have to check the IP address of your machine to do that type of following command.
+    </h5>
+    <ul>
+        <li>
+            ifconfig
+        </li>
+    </ul>
+    <div class="defaultpic">
+        <img src="../../../static/media/img/sl4.png">
+    </div>
+</ul>
+<ul>
+    <h5>
+    <u>Step 5</u>: As you can see we got our IP address now it’s time to start the apache server, start the apache server using the following command.
+    </h5>
+    <ul>
+        <li>
+            sudo service apache 2 start
+        </li>
+    </ul>
+    <div class="defaultpic">
+        <img src="../../../static/media/img/sl5.png">
+    </div>
+</ul>
+<ul>
+    <h5>
+    <u>Step 4</u>: Now we have to check the status of your server whether it is active or not so to check the status of your server run the following command.
+    </h5>
+    <ul>
+        <li>
+            service apache2 status
+        </li>
+    </ul>
+    <div class="defaultpic">
+        <img src="../../../static/media/img/sl6.png">
+    </div>
+</ul>
+<ul>
+    <h5>
+    <u>Step 4</u>: We can see that our server is under active status it means is running properly, now come back to the first terminal, and to check permissions run the following command.
+    </h5>
+    <ul>
+        <li>
+            ls -l
+        </li>
+    </ul>
+    <div class="defaultpic">
+        <img src="../../../static/media/img/sl7.png">
+    </div>
+</ul>
+<ul>
+    <h5>
+    <u>Step 4</u>: Now it’s time to run the tool using the following command.
+    </h5>
+    <ul>
+        <li>
+            python3 slowloris .py (your ip address) -s 500
+        </li>
+    </ul>
+    <div class="defaultpic">
+        <img src="../../../static/media/img/sl8.png">
+    </div>
+</ul>
+<ul>
+    <h5>
+    <u>Step 4</u>: You can see the tool has started attacking that particular IP address which we have given now to check whether its working or not go to your browser and on your URL bar type that IP address, and you will see the site is only loading and loading but not opening this is how Slowloris tool works.
+    </h5>
+    <div class="defaultpic">
+        <img src="../../../static/media/img/sl9.png">
+    </div>
+</ul>
+{% endblock %}

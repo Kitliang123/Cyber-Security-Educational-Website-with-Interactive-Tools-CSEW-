@@ -1,0 +1,104 @@
+{% extends 'main/base.html' %}
+
+{% block tittle %}
+Category - Brute-force
+{% endblock %}  
+
+{% block content %}
+<h1>
+    <u>Brute-force Attack</u>
+</h1>
+<div class="defaultpic">
+    <img src="../../../static/media/img/bruteforce.jpg">
+</div>
+<p>
+    <p>
+        One of the most often used strategies for breaking passwords is the brute force assault. But it's not only for breaking passwords. In a web application, hidden pages and material can also be found through brute force assaults. Basically, you have to "hit and try" until you succeed with this strike. Even while this attack occasionally takes longer, it is more effective.    </p>
+    <p>
+        A brute force attack use trial-and-error to determine encryption keys, login credentials, or the location of a hidden website. Hackers try every combination in the hopes of making an accurate approximation.
+    </p>
+    <p>
+        These assaults are carried out using "brute force," or extreme force, in an effort to "force" their way into your private account (s). Although it's an old attack strategy, hackers still choose it because it works. Because it can take anything from a few seconds to several years to crack a password, depending on its length and complexity.
+    </p>
+</p>
+<h2>
+    How Does A Brute-force Attack Work?
+</h2>
+<p>
+    A brute force attack is when an attacker attempts to attack a target using a set of specified values and then evaluates the response until he succeeds. Success is dependent upon the predetermined settings. Although it will take longer if it is larger, the likelihood of success is higher.
+</p>
+<p>
+    The dictionary attack used to break passwords is the brute force assault's most prevalent and simple to comprehend use. A password dictionary with millions of words that can be used as a password is utilised in this attack. For authentication, the attacker attempts each of these passwords separately. If the right password is in this dictionary, the attacker will be successful.
+</p>
+<p>
+    In a typical brute force assault, the attacker simply generates passwords consecutively by trying different letter and number combinations. However, if the password is too lengthy, this conventional method will take longer. Depending on the system being utilised and the length of the password, these assaults may take several minutes, several hours, or even many years to complete.
+</p>
+<p>
+    Always use lengthy and complicated passwords to protect against brute force attacks that attempt to crack passwords. Because of this, it is challenging for attackers to guess the password, and brute force attempts take too long. Another method of preventing an attacker from using brute force assaults against web applications is account lockout. Things are less straightforward to safeguard for offline applications, though.
+</p>
+<p>
+    According to this, the attacker sends queries and watches for the response to find hidden pages by attempting to guess the name of the page. A 404 response is displayed if the page doesn't exist; a 200 response indicates success. It can discover hidden pages on any website in this way.
+</p>
+<P>
+    In order to decipher the hash and determine a password from a given hash, brute force is also utilised. In this, a hash is created using a set of random passwords, and it is then compared to the target hash until the attacker discovers the right one. Therefore, the longer it may take to crack the password, the greater the level of encryption (64-bit, 128-bit, or 256-bit encryption).
+</P>
+<h2>
+    Brute-force Attack Examples
+</h2>
+<ul>
+    <li>
+        <strong>Brute-force attack on Alibaba (2016)</strong>
+    </li>
+    <p>
+        In 2016, a brute force assault on the well-known eCommerce site Alibaba compromised the credentials of almost 21 million customers. The attackers were able to get 99 million users' usernames and passwords through the hack, which happened between October and November of that year. The database they had access to was used by them to hack 20.6 million user accounts.
+    </p>
+    <p>
+        According to experts, user password overlap was the main reason for the assault. The majority of users were found to be using the same password for the platform for all of their other accounts. Weak passwords were another factor that led to the assault. Some of the users used passwords that were simple to crack and were weak.
+    </p>
+    <li>
+        <strong>Brute-force attack on Magento (2018)</strong>
+    </li>
+    <p>
+        Similar to Alibaba, Magento is a well-known eCommerce platform that had a brute force assault in 2018 that rendered its admin panels insecure.
+    </p>
+    <p>
+        No fewer than 1,000 account credentials were located on the dark web, according to the researchers who identified the hack. The attackers wanted to steal account holders' credit card information and infect their devices with malware to mine cryptocurrencies.
+    </p>
+    <p>
+        According to experts, there were over 1,000 reported accounts that were impacted. The business stated that the attackers used the weak passwords of its users to launch the brute force assault after it was discovered on the Magento open source, and it encouraged its users to set stronger passwords to prevent a repetition.
+    </p>
+    <li>
+        <strong>Brute-force attack on Dunkin’ Donuts (2015)</strong>
+    </li>
+    <p>
+        Due to a brute force assault, customers of the Dunkin' Donuts mobile app and website lost a significant amount of money. Within five days, hackers utilised brute force to obtain illegal access to 19,715 victims' accounts and steal their money.
+    </p>
+    <p>
+        A lawsuit was eventually filed against the corporation for failing to alert its users to the hack so they could take the appropriate precautions to secure their accounts.
+    </p>
+    <p>
+        Dunkin' Donuts eventually agreed to pay $650,000 to resolve the complaint, after first denying any involvement in the attack.
+    </p>
+</ul>
+<h2>
+    Example of Brute-force Tools:
+</h2>
+<ol>
+    <strong>1. <a href="/john">John the Ripper</a></strong>
+    <div class="defaultpic">
+        <img src="../../../static/media/img/john.jpg">
+    </div>
+    <p>
+        One of the fantastic brute-force tool that need no introduction is John the Ripper. It has long been a go-to option for conducting brute force attacks. For Unix systems, this free password-cracking programme was first created. Later, programmers made it available for a number of more systems. It now supports fifteen different operating systems, including Windows, DOS, BeOS, and Unix.
+    </p>
+</ol>
+<ol>
+    <strong>2. <a href="/aircrack">Aircrack-ng</a></strong>
+    <div class="defaultpic">
+        <img src="../../../static/media/img/aircrack.png">
+    </div>
+    <p>
+        This is a well-known and cost-free tool for brute-forcing wifi passwords. This programme was also included in an earlier article on the most well-liked password-cracking tools. This utility includes an analysis tool and a WEP/WPA/WPA2-PSK cracker for Wi-Fi 802.11 assaults. Any NIC that supports raw monitoring mode can utilise Aircrack-ng.
+    </p>
+</ol>
+{% endblock %}
